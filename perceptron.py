@@ -39,7 +39,7 @@ class Perceptron(object):
     return self
   
   def net_input(self, X):
-    return np.dot(X,self.w[1:]+self.w[0]) # dot used for inner product in 1d arrays and matrix multiplication in multiD-arrays, here it is calculating z=w0*x0+w1x1.....
+    return np.dot(X,self.w[1:])+self.w[0] # dot used for inner product in 1d arrays and matrix multiplication in multiD-arrays, here it is calculating z=w0*x0+w1x1.....
 
   def predict(self, X):
     return np.where(self.net_input(X) >= 0.0,1,-1) # this is the unit step function which is used to check if the predicted output is correct or positvely/negatively incorrect
